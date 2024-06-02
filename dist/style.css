@@ -26,7 +26,6 @@ body {
 #header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: red;
 }
 
 #titleContainer {
@@ -61,6 +60,24 @@ body {
 
 #form > input:focus {
   border: 2px solid white;
+}
+
+#glassContainer {
+  transition: border 0.3s ease-in-out;
+  position: relative;
+  right: 30px;
+  height: 40px;
+  width: 60px;
+  border-radius: 0px 20px 20px 0px;
+  background-color: rgb(75, 74, 74);
+  color: white;
+  outline: none;
+  border: 2px solid rgb(37, 37, 37);
+  border-left: none;
+}
+
+#glass {
+  margin-right: 7px;
 }
 
 #setting {
