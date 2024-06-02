@@ -1,5 +1,4 @@
-import "./style.css";
-import { retrieveWeather } from "./calls";
+import { retrieveWeather } from "./modules/calls";
 
 retrieveWeather("colorado").then((result) => {
   console.log(result);
