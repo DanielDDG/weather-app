@@ -42,7 +42,7 @@ function setForecastDays(forecast) {
 
     temp.textContent = `${
       forecast.forecast.forecastday[i - 1].day["avgtemp_" + selectedTemp]
-    }${selectedTemp.toUpperCase()}`;
+    }°${selectedTemp.toUpperCase()}`;
 
     if (day.classList.contains("hidden")) {
       day.classList.remove("hidden");
@@ -57,7 +57,7 @@ function setForecastDays(forecast) {
 function setLocationInformation(forecast) {
   locationName.textContent = `${forecast.location.name}, ${forecast.location.region}`;
   dateAndTime.textContent = new Date();
-  let upperTemp = selectedTemp.toUpperCase();
+  let upperTemp = "°" + selectedTemp.toUpperCase();
 
   document.getElementById("currentTemp").textContent = `${
     forecast.current["temp_" + selectedTemp]
