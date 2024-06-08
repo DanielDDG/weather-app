@@ -12,5 +12,5 @@ searchInput.addEventListener("focus", () => {
 });
 
 searchInput.addEventListener("blur", () => {
-  setBorders("rgb(37, 37, 37)");
+  setBorders("rgb(2, 121, 177)");
 });

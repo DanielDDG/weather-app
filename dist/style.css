@@ -52,10 +52,13 @@ body {
   font-family: "Lucida Sans";
   padding-left: 13px;
   border-radius: 20px;
-  background-color: rgb(75, 74, 74);
+  background-color: rgb(54, 53, 53);
   color: white;
   outline: none;
-  border: 2px solid rgb(37, 37, 37);
+  border: 2px solid rgb(2, 121, 177);
+  -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 #form > input:focus {
@@ -69,11 +72,15 @@ body {
   height: 40px;
   width: 60px;
   border-radius: 0px 20px 20px 0px;
-  background-color: rgb(75, 74, 74);
+  background-color: rgb(54, 53, 53);
   color: white;
   outline: none;
-  border: 2px solid rgb(37, 37, 37);
+  border: 2px solid rgb(2, 121, 177);
   border-left: none;
+  -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
 }
 
 #glass {
@@ -84,16 +91,35 @@ body {
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
   margin-right: 70px;
 }
 
 #setting > button {
-  height: 50px;
-  width: 80px;
+  transition: border 0.3s ease-in-out;
+  height: 40px;
+  width: 60px;
+  border-radius: 20px;
+  background-color: rgb(54, 53, 53);
+  color: white;
+  outline: none;
+  border: 2px solid rgb(2, 121, 177);
+  -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.active {
+  border: 2px solid white;
 }
 
 /* Title styling. */
+
+#location {
+  margin-left: 18px;
+}
 
 #locationTitleContainer {
   display: flex;
@@ -101,11 +127,18 @@ body {
   gap: 5px;
   justify-content: center;
   align-items: center;
-  background-color: bisque;
 }
 
 #locationName {
-  font-weight: 800;
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: white;
+}
+
+#dateAndTime,
+.value {
+  font-weight: 700;
+  opacity: 0.5;
 }
 
 /* Information styling. */
@@ -114,13 +147,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: brown;
   gap: 10px;
+  margin-top: 25px;
 }
 
 #dataContainer {
   display: grid;
   grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  width: 500px;
+  white-space: nowrap;
+  margin-left: 20px;
+}
+
+#dataContainer > div {
+  margin-bottom: 25px;
+}
+
+.valueTitle {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#currentTemp {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 /* Forecast styling. */
@@ -130,15 +182,50 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: purple;
   gap: 10px;
+  margin-bottom: 100px;
+}
+
+#forecastTitle {
+  margin-right: 30px;
+  font-size: 2.5rem;
+  color: white;
 }
 
 #forecastDates {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 39px;
 }
 
-#forecastDates > div {
-  display: flex;
+#weekdays {
+  width: 150px;
+  color: white;
+  font-weight: 700;
+}
+
+#weekdayTemps {
+  width: 80px;
+}
+
+.temps {
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.temps::after,
+.days::after {
+  content: "";
+  display: block;
+  border: 1px solid rgb(73, 73, 73);
+  margin-top: 5px;
+}
+
+.days::after {
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.hidden {
+  display: none;
 }
