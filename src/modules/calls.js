@@ -19,7 +19,7 @@ const elementNames = [
 
 async function retrieveWeather(location) {
   const fetchedForecastData = await fetch(
-    `https://api.weatherapi.com/v1/forecast.json?key=a016d2051be44e2f9be171214241005&q=${location}&days=7`
+    `https://api.weatherapi.com/v1/forecast.json?key=a016d2051be44e2f9be171214241005&q=${location}&days=3`
   );
 
   const forecastData = await fetchedForecastData.json();
@@ -27,11 +27,13 @@ async function retrieveWeather(location) {
 }
 
 function setForecastDays(forecast) {
-  for (let i = 1; i < 8; i++) {
+  for (let i = 1; i < 4; i++) {
     let day = document.getElementById(`day${i}`);
     let temp = document.getElementById(`temp${i}`);
     let nextDate = new Date();
     nextDate.setDate(nextDate.getDate() + i);
+
+    console.log(`day${i} element:`, day);
 
     const options = {
       weekday: "long",
@@ -94,8 +96,8 @@ function setLocationInformation(forecast) {
     forecast.forecast.forecastday[0].day["maxtemp_" + selectedTemp]
   }${upperTemp}`;
 
-  setForecastDays(forecast);
   setElementTitles();
+  setForecastDays(forecast);
 }
 
 function setElementTitles() {
